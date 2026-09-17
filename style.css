@@ -1,4 +1,6 @@
-/* Global Reset */
+/* =========================================
+   GLOBAL RESET & FONTS
+========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +14,15 @@ body {
     overflow-x: hidden;
 }
 
-/* Hero Section */
+/* Remove default blue link styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
 .hero {
     height: 100vh;
     display: flex;
@@ -23,7 +33,7 @@ body {
 }
 
 .title {
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 8vw, 5rem); /* Responsive text sizing */
     font-weight: 800;
     letter-spacing: -2px;
     margin-bottom: 10px;
@@ -31,7 +41,7 @@ body {
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
     color: #888;
     margin-bottom: 40px;
 }
@@ -45,21 +55,19 @@ body {
     50% { opacity: 0; }
 }
 
-/* Buttons */
 .cta-container {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .btn {
-    text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
     transition: all 0.3s ease;
 }
 
-/* The Slash Button */
 .slash-btn {
     color: #F5F5F5;
     border: 1px solid #E63946;
@@ -89,17 +97,84 @@ body {
     color: #050505;
 }
 
-/* Text Button */
 .text-btn {
     color: #F5F5F5;
     border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
 }
 
 .text-btn:hover {
     border-bottom: 2px solid #E63946;
     color: #E63946;
 }
-/* Featured Campaigns (Projects) */
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+.section {
+    padding: 80px 10%;
+    min-height: 50vh;
+}
+
+.section-title {
+    color: #E63946;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   THE ORIGIN (ABOUT)
+========================================= */
+.about-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.katana-line {
+    width: 4px;
+    height: 100px;
+    background-color: #E63946;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #aaa;
+    max-width: 600px;
+}
+
+/* =========================================
+   THE ARSENAL (TECH STACK)
+========================================= */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    max-width: 800px;
+}
+
+.skill-box {
+    border: 1px solid #222;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    background-color: #0a0a0a;
+    transition: all 0.3s ease;
+}
+
+.skill-box:hover {
+    border-color: #E63946;
+    color: #F5F5F5;
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.2);
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   QUESTS COMPLETED (PROJECTS)
+========================================= */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -113,6 +188,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    height: 100%;
 }
 
 .project-card::before {
@@ -162,4 +238,52 @@ body {
     background: rgba(230, 57, 70, 0.1);
     padding: 4px 10px;
     border: 1px solid rgba(230, 57, 70, 0.3);
+}
+
+/* =========================================
+   TRANSMISSION (CONTACT) & FOOTER
+========================================= */
+.contact-section {
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+}
+
+.contact-content p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    border: 1px solid #444;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background: #0a0a0a;
+}
+
+.social-btn:hover {
+    border-color: #E63946;
+    color: #E63946;
+    background: rgba(230, 57, 70, 0.05);
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #444;
+    font-size: 0.8rem;
+    background-color: #030303;
 }
