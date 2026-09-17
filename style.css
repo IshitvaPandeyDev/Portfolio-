@@ -1,0 +1,101 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505; /* Ink Black */
+    color: #F5F5F5; /* Rice Paper White */
+    font-family: 'JetBrains Mono', monospace;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10%;
+    border-left: 4px solid #E63946; /* The Katana Edge */
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.cursor {
+    color: #E63946;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Buttons */
+.cta-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+/* The Slash Button */
+.slash-btn {
+    color: #F5F5F5;
+    border: 1px solid #E63946;
+    padding: 15px 30px;
+    position: relative;
+    background: transparent;
+    z-index: 1;
+}
+
+.slash-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #E63946;
+    transition: width 0.3s cubic-bezier(0.75, 0, 0.125, 1);
+    z-index: -1;
+}
+
+.slash-btn:hover::before {
+    width: 100%;
+}
+
+.slash-btn:hover {
+    color: #050505;
+}
+
+/* Text Button */
+.text-btn {
+    color: #F5F5F5;
+    border-bottom: 2px solid transparent;
+}
+
+.text-btn:hover {
+    border-bottom: 2px solid #E63946;
+    color: #E63946;
+}
